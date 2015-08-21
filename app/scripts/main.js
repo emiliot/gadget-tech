@@ -1,5 +1,6 @@
 'use strict';
 
 $(document).ready(function(){
-	$(".footer").load("footer.html");
+	$(".header").load("layout/_header.html");
+	$(".footer").load("layout/_footer.html");
 });
