@@ -1,1 +1,5 @@
-console.log('\'Allo \'Allo!');
+'use strict';
+
+$(document).ready(function(){
+	$(".footer").load("footer.html");
+});
