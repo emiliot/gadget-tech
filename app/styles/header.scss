@@ -1,0 +1,87 @@
+$font-stack: "Myriad Pro", "Gill Sans", Helvetica, sans-serif;
+$backgroundColor: white;
+$baseColor1: #c7c9cc;
+$baseColor2: #58595b;
+$navBarHeight: 65px;
+$navBrandHeight: 55px;
+
+/*==============================
+=            Navbar            =
+==============================*/
+.nav > li {
+	float : left;
+}
+
+.navbar-default {
+	background-color: $backgroundColor;
+	border: 0px;
+}
+
+.gadget-navbar{
+	height: $navBarHeight;
+	background-color: $baseColor1;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.navbar-brand{
+	padding: 7px 15px 0px 0px;
+	img {
+		height: $navBrandHeight;
+	}
+}
+
+.gadget-navbar-menu{
+	background-color: $baseColor2;
+	height: $navBarHeight;
+	padding-top: 10px;
+
+	ul {
+		list-style: none;
+	}
+
+	.menu-social {
+		color: white;
+		font-size: 30px;
+	}
+}
+
+.gadget-navbar-menu-text > li > a{
+	color: #fff !important;
+	font-size: 0.7vw;
+	font-style: normal;
+	padding-left: 1.5vw;
+}
+
+.gadget-dropdown-menu{
+	height: 8px;
+	list-style: none;
+	margin-bottom: 0px;
+
+	.gadget-dropdown-menu-it {
+		background-color: #503774;
+	}
+
+	.gadget-dropdown-menu-networking {
+		background-color: #297C98;
+	}
+
+	.gadget-dropdown-menu-surveillance {
+		background-color: #FCE72E;
+	}
+
+	.gadget-dropdown-menu-audio {
+		background-color: #B2D46B;
+	}
+
+	.gadget-dropdown-menu-automation {
+		background-color: #F6F6F6;
+	}
+
+	.gadget-dropdown-menu-contact{
+		background-color: #231F20;
+	}
+}
+
+
+/*=====  End of Navbar  ======*/
