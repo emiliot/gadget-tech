@@ -9,7 +9,7 @@ $navBrandHeight: 55px;
 =            Navbar            =
 ==============================*/
 .nav > li {
-	float : left;
+	float: left;
 }
 
 .navbar-default {
@@ -22,6 +22,11 @@ $navBrandHeight: 55px;
 	background-color: $baseColor1;
 	padding-left: 0px;
 	padding-right: 0px;
+
+	.fa, .menu-social {
+		color: white;
+		font-size: 30px;
+	}
 }
 
 .navbar-brand{
@@ -33,16 +38,12 @@ $navBrandHeight: 55px;
 
 .gadget-navbar-menu{
 	background-color: $baseColor2;
+	font-family: $font-stack;
 	height: $navBarHeight;
 	padding-top: 10px;
 
 	ul {
 		list-style: none;
-	}
-
-	.menu-social {
-		color: white;
-		font-size: 30px;
 	}
 }
 
@@ -53,35 +54,106 @@ $navBrandHeight: 55px;
 	padding-left: 1.5vw;
 }
 
-.gadget-dropdown-menu{
-	height: 8px;
+.gadget-dropdown-menu {
+	background-color: transparent;
+	font-family: $font-stack;
+	font-size: 15px;
+	height: 7px;
 	list-style: none;
 	margin-bottom: 0px;
+	padding:0;
+	width:750px;
+
+	> li {
+		width:16.66667%;
+		float: left;  
+		> span {
+			height: 50px;
+			font-weight: bold;
+		}
+	}
+
+	li {
+		list-style: none;
+		padding:0;
+		min-height: 7px;
+
+		span {
+			padding: 5px 12px;
+		    opacity: 1.0;
+		    filter: alpha(opacity=100); /* For IE8 and earlier */
+		    vertical-align: botom;
+		}
+
+		span, ul {
+			display:none;
+		}
+
+		ul {
+			padding: 0;
+		}
+
+		ul li { 
+			border-top:1px solid white; 
+			margin:0;
+			padding:0;
+		}
+	}
+
+	li:hover {
+	    opacity: 0.85;
+	    filter: alpha(opacity=85); /* For IE8 and earlier */
+
+		span, ul {
+			display: block;
+		}
+	}
 
 	.gadget-dropdown-menu-it {
 		background-color: #503774;
+		color: white;
 	}
 
 	.gadget-dropdown-menu-networking {
 		background-color: #297C98;
+		color: white;
+		> span {
+			padding-top:25px;
+		}
 	}
 
 	.gadget-dropdown-menu-surveillance {
 		background-color: #FCE72E;
+		color: #B37013;
 	}
 
 	.gadget-dropdown-menu-audio {
 		background-color: #B2D46B;
+		color: white;
+		> span {
+			padding-top:25px;
+		}
 	}
 
 	.gadget-dropdown-menu-automation {
 		background-color: #F6F6F6;
+		color: #5E5F61;
+		> span {
+			padding-top:25px;
+		}
 	}
 
-	.gadget-dropdown-menu-contact{
+	.gadget-dropdown-menu-contact {
 		background-color: #231F20;
+		color: white;
+		text-align: center;
+		padding-right:15px;
+		> span {
+			padding-top:25px;
+		}
 	}
 }
+
 
 
 /*=====  End of Navbar  ======*/
