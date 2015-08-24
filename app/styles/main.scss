@@ -10,16 +10,19 @@ $icon-font-path: '../fonts/';
 body {
   margin: 0;
   padding-top: 72px !important;
-  padding-bottom: 20px;
 }
+
+  .fa, .menu-social {
+    font-size: 30px;
+  }
+  
+  .fa.fa-mobile {
+    font-size: 50px;
+  }
 
 /* Custom page footer */
 .footer {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-  margin: 30px 0;
 }
