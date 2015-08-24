@@ -2,14 +2,24 @@
 	width: 100%;
 }
 
-.background-footer{
-	background-color: #636466;
-}
-
 .remove-padding{
 	padding: 0px 0px 0px 0px;
 }
 
 .list-none{
 	list-style: none;
+}
+
+.footer{
+	color: #eee;
+	background-color: #636466;
+}
+
+ul.unstyled{
+	list-style: none;
+	padding: 0;
+}
+
+.copyright{
+	font-size: 9px;
 }
