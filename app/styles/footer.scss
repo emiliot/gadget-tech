@@ -20,6 +20,31 @@ ul.unstyled{
 	padding: 0;
 }
 
+ul.unstyled a{
+	color: #eee;
+}
+
+ul.unstyled a:hover{
+	text-decoration: none;
+}
+
 .copyright{
 	font-size: 9px;
+}
+
+.vertical-bar-left{
+	border-left: 2px solid #eee;
+}
+
+.vertical-bar-right{
+	border-right: 2px solid #eee;
+}
+
+.map{
+	padding-left: 40px;
+}
+
+.breathe{
+	padding-left: 40px;
+	padding-right: 40px;
 }
