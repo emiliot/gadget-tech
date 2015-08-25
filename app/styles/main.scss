@@ -9,7 +9,40 @@ $icon-font-path: '../fonts/';
 /* Space out content a bit */
 body {
   margin: 0;
-//  padding-top: 72px !important;
+  padding-top: 72px !important;
+}
+
+h1, h2, h3 {
+	text-align: center;
+}
+
+.carousel {
+	margin-bottom: 50px;
+	background-color: blue;
+	.carousel-indicators {
+		bottom: -50px; 
+		li {
+			background-color: white;
+			height: 14px;
+			margin: 1% 1% 0 1%;
+			outline: 1px solid #ACADAF;
+			outline-offset: 1px;
+			-moz-outline-radius: 10px;
+			-ms-outline-radius: 10px;
+			-o-outline-radius: 10px;
+			-webkit-outline-radius: 10px;
+			width: 14px;
+		}
+
+		li.active {
+			background-color: #ACADAF;
+		}
+	}
+	.carousel-inner {
+		.item {
+			min-height:500px;
+		}
+	}
 }
 
 .container {
@@ -22,11 +55,4 @@ body {
 
 .fa.fa-mobile {
   font-size: 50px;
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
 }
