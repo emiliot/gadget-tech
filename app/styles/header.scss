@@ -70,6 +70,10 @@ $navBrandHeight: 55px;
 			height: 50px;
 			font-weight: bold;
 		}
+
+		a { text-decoration: none; }
+
+		//a:hover { text-decoration: underline; }
 	}
 
 	li {
@@ -111,11 +115,12 @@ $navBrandHeight: 55px;
 	.gadget-dropdown-menu-it {
 		background-color: #503774;
 		color: white;
+		a { color: white; }
 	}
 
 	.gadget-dropdown-menu-networking {
 		background-color: #297C98;
-		color: white;
+		a { color: white; }
 		> span {
 			padding-top:25px;
 		}
@@ -123,12 +128,12 @@ $navBrandHeight: 55px;
 
 	.gadget-dropdown-menu-surveillance {
 		background-color: #FCE72E;
-		color: #B37013;
+		a { color: #B37013; }
 	}
 
 	.gadget-dropdown-menu-audio {
 		background-color: #B2D46B;
-		color: white;
+		a { color: white; }
 		> span {
 			padding-top:25px;
 		}
@@ -136,7 +141,7 @@ $navBrandHeight: 55px;
 
 	.gadget-dropdown-menu-automation {
 		background-color: #F6F6F6;
-		color: #5E5F61;
+		a { color: #5E5F61; }
 		> span {
 			padding-top:25px;
 		}

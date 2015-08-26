@@ -4,152 +4,154 @@ $skewYpos: 10deg;
 $skewYneg: -10deg;
 $boxPadding: 5% 2.5% 2% 2.5%;
 
-#contact {
-	> div {
-		font-family: $font-stack;
-		.title {
-			background-color: black;
-			padding: $boxPadding;
-		    position: relative;
-	 	    border-radius: $radius $radius 0 0;
-			color:white;
-	 	    h2 {
-				font-weight: bold;
-			    text-align: center;
+.contact {
+	font-family: $font-stack;
+	.title {
+		background-color: black;
+		padding: $boxPadding;
+	    position: relative;
+ 	    border-radius: $radius $radius 0 0;
+		color:white;
+ 	    h2 {
+			font-weight: bold;
+		    text-align: center;
+		}
+	}
+
+	.title:before, .title:after { 
+		content: ''; 
+		background-color: black; 
+		position: absolute; 
+		bottom: -15px; 
+		border-bottom: thick solid white;
+		height: 40%; 
+	}
+
+	.title:before {
+		width: 50%; 
+		-webkit-transform: skewY($skewYpos); 
+		-moz-transform: skewY($skewYpos); 
+		-ms-transform: skewY($skewYpos); 
+		-o-transform: skewY($skewYpos); 
+		transform: skewY($skewYpos); 
+		left: 0; 
+	}
+	.title:after {
+		width: 50%; 
+		-webkit-transform: skewY($skewYneg); 
+		-moz-transform: skewY($skewYneg); 
+		-ms-transform: skewY($skewYneg); 
+		-o-transform: skewY($skewYneg); 
+		transform: skewY($skewYneg);
+		right: 0; 
+	}
+
+	.info {
+		background-color: gray;
+ 	    border-radius: 0 0 $radius $radius;
+		padding: 10%;
+		color: white;
+
+		ul {
+			list-style: none;
+			li {
+				margin-top:10%;
+				i { display: inline-block; vertical-align: middle; font-size: 40px; }
+				span { display: inline-block; padding-left: 15px; vertical-align: middle; }
+			}
+			.email {
+				span { font-size: 20px; }
+			}
+			.phone {
+				padding-left:5px;
+				i { font-size: 75px; }
+				span { font-size: 25px; }
+			}
+			.address {
+				padding-left:4px;
+				span { font-size: 17px; }
 			}
 		}
+	}
+}
 
-		.title:before, .title:after { 
-			content: ''; 
-			background-color: black; 
-			position: absolute; 
-			bottom: -15px; 
-			border-bottom: thick solid white;
-			height: 40%; 
-		}
-
-		.title:before {
-			width: 50%; 
-			-webkit-transform: skewY($skewYpos); 
-			-moz-transform: skewY($skewYpos); 
-			-ms-transform: skewY($skewYpos); 
-			-o-transform: skewY($skewYpos); 
-			transform: skewY($skewYpos); 
-			left: 0; 
-		}
-		.title:after {
-			width: 50%; 
-			-webkit-transform: skewY($skewYneg); 
-			-moz-transform: skewY($skewYneg); 
-			-ms-transform: skewY($skewYneg); 
-			-o-transform: skewY($skewYneg); 
-			transform: skewY($skewYneg);
-			right: 0; 
-		}
-
-		.info {
-			background-color: gray;
-	 	    border-radius: 0 0 $radius $radius;
-			padding: 10%;
-			color: white;
-
-			ul {
-				list-style: none;
-				li {
-					margin-top:10%;
-					i { display: inline-block; vertical-align: middle; font-size: 40px; }
-					span { display: inline-block; padding-left: 15px; vertical-align: middle; }
-				}
-				.email {
-					span { font-size: 20px; }
-				}
-				.phone {
-					padding-left:5px;
-					i { font-size: 75px; }
-					span { font-size: 25px; }
-				}
-				.address {
-					padding-left:4px;
-					span { font-size: 17px; }
-				}
-			}
-		}
+#contact.contact-it > div {
+	.title {
+		background-color: #503774;
+		color: white;
 	}
 
-	.contact-it {
-		.title {
-			background-color: #503774;
-			color: white;
-		}
-
-		.title:before, .title:after { 
-			background-color: #503774; 
-		}
-
-		.info {
-			background-color: #6A499C;
-			color: white;
-		}
+	.title:before, .title:after { 
+		background-color: #503774; 
 	}
-	.contact-networking {
-		.title {
-			background-color: #19598E;
-			color: white;
-		}
 
-		.title:before, .title:after { 
-			background-color: #19598E; 
-		}
-
-		.info {
-			background-color: #297C98;
-			color: white;
-		}
+	.info {
+		background-color: #6A499C;
+		color: white;
 	}
-	.contact-surveillance {
-		.title {
-			background-color: #FFCD27;
-			color: #C26D28;
-		}
+}
 
-		.title:before, .title:after { 
-			background-color: #FFCD27; 
-		}
-
-		.info {
-			background-color: #ECAF27;
-			color: white;
-		}
+#contact.contact-networking > div {
+	.title {
+		background-color: #19598E;
+		color: white;
 	}
-	.contact-audio {
-		.title {
-			background-color: #548041;
-			color: white;
-		}
 
-		.title:before, .title:after { 
-			background-color: #548041; 
-		}
-
-		.info {
-			background-color: #B2D46B;
-			color: #548041;
-		}
+	.title:before, .title:after { 
+		background-color: #19598E; 
 	}
-	.contact-automation {
-		.title {
-			background-color: #333333;
-			color: white;
-		}
 
-		.title:before, .title:after { 
-			background-color: #333333; 
-		}
+	.info {
+		background-color: #297C98;
+		color: white;
+	}
+}
 
-		.info {
-			background-color: #58595B;
-			color: white;
-		}
+#contact.contact-surveillance > div {
+	.title {
+		background-color: #FFCD27;
+		color: #C26D28;
+	}
+
+	.title:before, .title:after { 
+		background-color: #FFCD27; 
+	}
+
+	.info {
+		background-color: #ECAF27;
+		color: white;
+	}
+}
+
+#contact.contact-audio > div {
+	.title {
+		background-color: #548041;
+		color: white;
+	}
+
+	.title:before, .title:after { 
+		background-color: #548041; 
+	}
+
+	.info {
+		background-color: #B2D46B;
+		color: #548041;
+	}
+}
+
+#contact.contact-automation > div {
+	.title {
+		background-color: #333333;
+		color: white;
+	}
+
+	.title:before, .title:after { 
+		background-color: #333333; 
+	}
+
+	.info {
+		background-color: #58595B;
+		color: white;
 	}
 }
 
