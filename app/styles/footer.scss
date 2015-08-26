@@ -6,27 +6,29 @@
 	padding: 0px 0px 0px 0px;
 }
 
-.list-none{
+.list-none {
 	list-style: none;
 }
 
-.footer{
+.footer {
 	color: #eee;
 	background-color: #636466;
+	border-top: 1px solid #e5e5e5;
+	margin-top:50px;
+	padding-top: 19px;
 }
 
-ul.unstyled{
+ul.unstyled {
 	list-style: none;
 	padding: 0;
+	a {
+		color: #eee;
+	}
+	a:hover {
+		text-decoration: none;
+	}
 }
 
-ul.unstyled a{
-	color: #eee;
-}
-
-ul.unstyled a:hover{
-	text-decoration: none;
-}
 
 .copyright{
 	font-size: 9px;
