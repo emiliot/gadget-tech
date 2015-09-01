@@ -3,7 +3,9 @@
 $(document).ready(function(){
 	var location = window.location.href.toString().split(window.location.host)[1]; //document.write(url.replace(/^(?:\/\/|[^\/]+)*\//, ""));
 	
-	$('#header').load('layout/_header.html');
+	$('#header').load('layout/_header.html', function(){
+		translateText();
+	});
 	$('#contact').load('layout/_contact.html');
 	$('#footer').load('layout/_footer.html');
 	$('#carousel').load('layout/_carousel.html', function () {
