@@ -62,6 +62,10 @@ $(document).ready(function(){
 				$(carrusel).carousel(4);
 				console.log("Audio and Video");
 				break;
+			case 'carousel-automation':
+				$(carrusel).carousel(5);
+				console.log("Automation");
+				break;
 			default:
 				$(this).carousel(0);
 				$(carrusel).carousel({ pause: false, interval: 5000 });
