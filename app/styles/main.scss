@@ -9,7 +9,7 @@ $icon-font-path: '../fonts/';
 body {
 	color:#6F6F6F;
 	margin: 0;
-	padding-top: 72px !important;
+	/*padding-top: 72px !important;*/
 	font-size: 16px;
 }
 
@@ -38,6 +38,7 @@ h4 {
 
 .carousel {
 	margin-bottom: 50px;
+	min-width: 1170px;
 	background-color: blue;
 	.carousel-indicators {
 		bottom: -50px; 
@@ -47,6 +48,7 @@ h4 {
 			margin: 1% 1% 0 1%;
 			outline: 1px solid #ACADAF;
 			outline-offset: 1px;
+			outline-radius: 10px;
 			-moz-outline-radius: 10px;
 			-ms-outline-radius: 10px;
 			-o-outline-radius: 10px;
@@ -60,7 +62,7 @@ h4 {
 	}
 	.carousel-inner {
 		.item {
-			min-height:500px;
+			/*min-height:500px;*/
 		}
 
 		.carousel-caption {
