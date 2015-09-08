@@ -1,5 +1,5 @@
 $font-stack: "Myriad Pro", "Gill Sans", Helvetica, sans-serif;
-$radius: 30px;
+$radius: 15px;
 $skewYpos: 10deg;
 $skewYneg: -10deg;
 $boxPadding: 5% 2.5% 2% 2.5%;
@@ -15,6 +15,7 @@ $boxPadding: 5% 2.5% 2% 2.5%;
  	    h2 {
 			font-weight: bold;
 		    text-align: center;
+		    margin: 0.5em auto;
 		}
 	}
 
@@ -78,7 +79,9 @@ $boxPadding: 5% 2.5% 2% 2.5%;
 #contact.contact-it > div {
 	.title {
 		background-color: #503774;
-		color: white;
+		h2 {
+			color: white;
+		}
 	}
 
 	.title:before, .title:after { 
@@ -94,7 +97,9 @@ $boxPadding: 5% 2.5% 2% 2.5%;
 #contact.contact-networking > div {
 	.title {
 		background-color: #19598E;
-		color: white;
+		h2 {
+			color: white;
+		}
 	}
 
 	.title:before, .title:after { 
@@ -110,7 +115,9 @@ $boxPadding: 5% 2.5% 2% 2.5%;
 #contact.contact-surveillance > div {
 	.title {
 		background-color: #FFCD27;
-		color: #C26D28;
+		h2 {
+			color: #C26D28;
+		}
 	}
 
 	.title:before, .title:after { 
@@ -126,7 +133,9 @@ $boxPadding: 5% 2.5% 2% 2.5%;
 #contact.contact-audio > div {
 	.title {
 		background-color: #548041;
-		color: white;
+		h2 {
+			color: white;
+		}
 	}
 
 	.title:before, .title:after { 
@@ -142,7 +151,9 @@ $boxPadding: 5% 2.5% 2% 2.5%;
 #contact.contact-automation > div {
 	.title {
 		background-color: #333333;
-		color: white;
+		h2 {
+			color: white;
+		}
 	}
 
 	.title:before, .title:after { 

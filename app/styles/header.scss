@@ -12,6 +12,12 @@ $navBrandHeight: 55px;
 	float: left;
 }
 
+.navbar {
+	margin-bottom:0px;
+	min-width:1170px;
+	width:100%;
+}
+
 .navbar-default {
 	background-color: $backgroundColor;
 	border: 0px;
