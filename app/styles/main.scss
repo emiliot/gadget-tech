@@ -104,3 +104,49 @@ h4 {
 }
 
 .copyright { text-align: center; }
+
+
+.index-icon {
+	background-repeat: no-repeat;
+	background-size: contain;
+	height:175px;
+}
+
+.it-icon {
+	background-image: url('../img/GT IT Serv&Support Icon2.png');
+}
+.networking-icon {
+	background-image: url('../img/GT Networking Icon2.png');
+}
+.surveillance-icon {
+	background-image: url('../img/GT SurveillanceCam Icon2.png');
+}
+.audio-icon {
+	background-image: url('../img/GT Audio&Video Icon2.png');
+}
+.automation-icon {
+	background-image: url('../img/GT Automation Icon2.png');
+}
+
+
+.network-brands {
+	border-bottom: 2px solid #666666;
+	padding-bottom: 5px;
+
+	div { 
+		display: inline-block;
+		height: 200px;
+		vertical-align: middle;
+
+		.helper {
+		    display: inline-block;
+		    height: 100%;
+		    vertical-align: middle;
+		}
+		img { 
+		    vertical-align: middle;
+			max-height:100%;
+			max-width:100%;
+		}
+	}
+}
