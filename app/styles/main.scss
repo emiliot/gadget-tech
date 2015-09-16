@@ -46,14 +46,27 @@ h4 {
 			background-color: white;
 			height: 14px;
 			margin: 1% 1% 0 1%;
-			outline: 1px solid #ACADAF;
+			/*outline: 1px solid #ACADAF;
 			outline-offset: 1px;
 			outline-radius: 10px;
 			-moz-outline-radius: 10px;
 			-ms-outline-radius: 10px;
 			-o-outline-radius: 10px;
-			-webkit-outline-radius: 10px;
-			width: 14px;
+			-webkit-outline-radius: 10px; */
+			border-radius: 100%;
+		    /* #1 */
+		    border: 2px solid white;
+		    /* #2 * /
+		    padding: 5px;
+		    background: hsl(0, 0%, 20%);
+		    */
+		    
+		    /* #3 
+		    outline: 5px solid hsl(0, 0%, 60%); */
+		    
+		    /* #4 AND INFINITY!!! (CSS3 only) */
+		    box-shadow: 0 0 1px 1px #ACADAF;
+		    width: 14px;
 		}
 
 		li.active {
@@ -104,3 +117,49 @@ h4 {
 }
 
 .copyright { text-align: center; }
+
+
+.index-icon {
+	background-repeat: no-repeat;
+	background-size: contain;
+	height:175px;
+}
+
+.it-icon {
+	background-image: url('../img/GT IT Serv&Support Icon2.png');
+}
+.networking-icon {
+	background-image: url('../img/GT Networking Icon2.png');
+}
+.surveillance-icon {
+	background-image: url('../img/GT SurveillanceCam Icon2.png');
+}
+.audio-icon {
+	background-image: url('../img/GT Audio&Video Icon2.png');
+}
+.automation-icon {
+	background-image: url('../img/GT Automation Icon2.png');
+}
+
+
+.network-brands {
+	border-bottom: 2px solid #666666;
+	padding-bottom: 5px;
+
+	div { 
+		display: inline-block;
+		height: 200px;
+		vertical-align: middle;
+
+		.helper {
+		    display: inline-block;
+		    height: 100%;
+		    vertical-align: middle;
+		}
+		img { 
+		    vertical-align: middle;
+			max-height:100%;
+			max-width:100%;
+		}
+	}
+}

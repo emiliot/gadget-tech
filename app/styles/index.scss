@@ -4,4 +4,28 @@
 	position: relative;
 	text-align: center;
 	width: 20%;
+
+	a { 
+		color:#6F6F6F;
+		text-decoration: none;
+	}
+}
+.section:hover {
+	cursor: pointer;
+
+	.it-icon {
+		background-image: url('../img/GT IT Serv&Support Icon.png');
+	}
+	.networking-icon {
+		background-image: url('../img/GT Networking Icon.png');
+	}
+	.surveillance-icon {
+		background-image: url('../img/GT SurveillanceCam Icon.png');
+	}
+	.audio-icon {
+		background-image: url('../img/GT Audio&Video Icon.png');
+	}
+	.automation-icon {
+		background-image: url('../img/GT Automation Icon.png');
+	}
 }
