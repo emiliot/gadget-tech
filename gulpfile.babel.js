@@ -4,23 +4,33 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
 import {stream as wiredep} from 'wiredep';
+import gulpConcat from 'gulp-concat';
+import gulpSass from 'gulp-sass';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
+// gulp.task('styles', () => {
+//   return gulp.src('app/styles/*.scss')
+//     .pipe($.plumber())
+//     .pipe($.sourcemaps.init())
+//     .pipe($.sass.sync({
+//       outputStyle: 'expanded',
+//       precision: 10,
+//       includePaths: ['.']
+//     }).on('error', $.sass.logError))
+//     .pipe($.autoprefixer({browsers: ['last 1 version']}))
+//     // .pipe($.sourcemaps.write())
+//     .pipe(gulpConcat('main.css'))
+//     .pipe(gulp.dest('dist/styles'))
+//     .pipe(reload({stream: true}));
+// });
+
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
-    .pipe($.plumber())
-    .pipe($.sourcemaps.init())
-    .pipe($.sass.sync({
-      outputStyle: 'expanded',
-      precision: 10,
-      includePaths: ['.']
-    }).on('error', $.sass.logError))
-    .pipe($.autoprefixer({browsers: ['last 1 version']}))
-    .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('.tmp/styles'))
-    .pipe(reload({stream: true}));
+    .pipe(gulpSass({}))
+    .pipe(gulpConcat('main.css'))
+    .pipe(gulp.dest('dist/styles'));
 });
 
 function lint(files, options) {
@@ -50,24 +60,25 @@ gulp.task('html', ['styles'], () => {
     .pipe($.if('*.css', $.minifyCss({compatibility: '*'})))
     .pipe(assets.restore())
     .pipe($.useref())
-    .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
+    // .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
     .pipe(gulp.dest('dist'));
 });
 
 gulp.task('images', () => {
-  return gulp.src('app/images/**/*')
+  return gulp.src('app/img/**/*')
     .pipe($.if($.if.isFile, $.cache($.imagemin({
       progressive: true,
       interlaced: true,
       // don't remove IDs from SVGs, they are often used
       // as hooks for embedding and styling
       svgoPlugins: [{cleanupIDs: false}]
-    }))
-    .on('error', function (err) {
-      console.log(err);
-      this.end();
-    })))
-    .pipe(gulp.dest('dist/images'));
+    }))))
+    .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('layout', () => {
+  return gulp.src('app/layout/*.html')
+    .pipe(gulp.dest('dist/layout'));
 });
 
 gulp.task('fonts', () => {
@@ -156,7 +167,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('build', ['lint', 'html', 'images', 'fonts', 'layout', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
