@@ -5,9 +5,11 @@ $(document).ready(function(){
 	
 	$('#header').load('layout/_header.html', function(){
 		initTranslate();
+		$('#footer').load('layout/_footer.html', function(){
+			setText(sessionStorage.getItem('language'));
+		});
 	});
 	$('#contact').load('layout/_contact.html');
-	$('#footer').load('layout/_footer.html');
 	$('#carousel').load('layout/_carousel.html', function () {
 		$('#main-carousel .carousel-indicators li').on('click', function () {			
 			switch(this.dataset.slideTo) {

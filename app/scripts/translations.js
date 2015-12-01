@@ -8,8 +8,16 @@ var text = {
 			value : "mundo"
 		},
 		{
+			key : "home-title",
+			value : "Inicio"
+		},
+		{
 			key : "home-description",
 			value : "Ofrecemos soluciones, servicios y productos de tecnología a través de una ingeniosa organización adaptable a las necesidades de su empresa, negocio, hogar o espacio, con la capacidad de proveerle lo más novedoso y práctico en cualquiera de las siguientes áreas:"
+		},
+		{
+			key : 'it-services-title',
+			value : 'Servicios IT y Soporte'
 		},
 		{
 			key : "it-service-desk-description",
@@ -56,8 +64,16 @@ var text = {
 			value : "Si su empresa u organización no cuenta con el personal de soporte de IT dedicado, podemos actuar como su departamento para esta área. Le ofrecemos nuestra solución de outsourcing con planes adaptables a sus necesidades. En Gadget Technology le proporcionamos todo, desde la instalación y mantenimiento de servidores y estaciones de trabajo, hasta la administración de redes cableadas o inalámbricas."
 		},
 		{
+			key : 'networking-title',
+			value : 'Redes'
+		},
+		{
 			key : "networking-desc",
 			value : "Entre nuestras principales soluciones le ofrecemos el análisis, la logística e implementación de Redes de Área Local (LAN), Redes Inalámbricas (Wireless) y la infraestructura necesaria para configurar Redes Privadas Virtuales (VPN) en empresas y hogares. Instalamos todo tipo de redes, Cableadas  (UTP, Fibra Óptica) o inalámbricas (WI-FI)."
+		},
+		{
+			key : "surveillance-title",
+			value : "Cámaras de Seguridad"
 		},
 		{
 			key : "surveillance-desc",
@@ -112,6 +128,10 @@ var text = {
 			value : "Si necesita total discreción para vigilar algún lugar de su casa o negocio, le recomendamos las cámaras espías. Estas se colocan dentro de algún objeto (detectores de humo, sensores de movimiento, espejos, tornillos, enchufes, etc.) y pasan desapercibidas a todas las personas que circulen delante de ellas."
 		},
 		{
+			key : "audio-title",
+			value : "Sistemas de Audio y Video"
+		},
+		{
 			key : "audio-desc-p1",
 			value : "Somos profesionales en la instalación de equipos de audio y video, así como en proyectores y teatro en casa (Home Teather), ya sea residencial, comercial o para su empresa."
 		},
@@ -148,6 +168,10 @@ var text = {
 			value : "Sport Bar, Locales comerciales, etc."
 		},
 		{
+			key : "automation-title",
+			value : "Automatización"
+		},
+		{
 			key : "automation-desc-p1",
 			value : "Desarrollamos, distribuimos, instalamos e integramos productos y servicios enfocados a casas  inteligentes, automatización de oficinas, comercios, edificios corporativos, hoteles, hospitales, etc. Control y ajuste automático de escenas de iluminación, temperatura (para piso, espacios y albercas) y niveles de agua (cisternas, albercas, spas) desde su smartphone y/o dispositivo de preferencia."
 		},
@@ -176,8 +200,16 @@ var text = {
 			value : "world"
 		},
 		{
+			key : "home-title",
+			value : "Home"
+		},
+		{
 			key : "home-description",
 			value : "We offer solutions, services and technology products, through an ingenious organization adaptive to the needs of your company, business, home or space, with the ability to provide the most innovative and practical in any of the following areas:"
+		},
+		{
+			key : 'it-services-title',
+			value : 'IT Services and Support'
 		},
 		{
 			key : "it-service-desk-description",
@@ -224,8 +256,16 @@ var text = {
 			value : "If your company or organization does not have personnel dedicated IT support, we can act as your department for this area. We offer our outsourcing solution adapted to your needs plans. Gadget Technology provides everything from installation and maintenance of servers and workstations, to management of wired and wireless networks."
 		},
 		{
+			key : 'networking-title',
+			value : 'Networking'
+		},
+		{
 			key : "networking-desc",
 			value : "Among our main solutions we offer analysis, logistics and implementation of Local Area Networks (LAN) , wireless networks (Wireless) and the infrastructure to configure Virtual Private Networks (VPN) in businesses and homes. We install all types of networks, Wired (UTP, fiber) or wireless (WI-FI)."
+		},
+		{
+			key : "surveillance-title",
+			value : "Surveillance Cameras"
 		},
 		{
 			key : "surveillance-desc",
@@ -280,6 +320,10 @@ var text = {
 			value : "If you need complete discretion to monitor somewhere in your home or business, we recommend spy cameras. These are placed within an object (smoke detectors, motion sensors, mirrors, screws, plugs, etc.) and go unnoticed to all persons traveling in front of them."
 		},
 		{
+			key : 'audio-title',
+			value : 'Audio & Video'
+		},
+		{
 			key : "audio-desc-p1",
 			value : "We are professionals in the installation of audio and video, as well as projectors and home theater, whether residential, commercial or for your company."
 		},
@@ -316,6 +360,10 @@ var text = {
 			value : "Sport Bar, Commercial premises, etc."
 		},
 		{
+			key : "automation-title",
+			value : "Automation"
+		},
+		{
 			key : "automation-desc-p1",
 			value : "We develop, distribute, install and integrate products and services focused on smart homes, office automation, shops, office buildings, hotels, hospitals, etc. Automatic adjustment of lighting scenes, temperature (for floor, spaces and pools) and water levels (tanks, swimming pools, spas) from your smartphone and / or device of choice."
 		},
@@ -341,15 +389,16 @@ var text = {
 var setText = function(language){
 	var translations = text[language];
 	for (var i = translations.length - 1; i >= 0; i--) {
-		$("#" + translations[i].key).text(translations[i].value);
-		// console.log(translations[i].key, translations[i].value);
+		$("."+translations[i].key).each(function(){
+			$(this).text(translations[i].value);
+		});
 	};
 }
 
 var initTranslate = function (){
 	var elem = $("#language-switch");
-	sessionStorage.setItem('language', defaultLanguage)
-	elem.html(defaultLanguage);
+	var language = sessionStorage.getItem('language', defaultLanguage)
+	elem.html(language);
 	
 	elem.on('click', function(){
 		var language = sessionStorage.getItem('language');
@@ -362,4 +411,5 @@ var initTranslate = function (){
 		sessionStorage.setItem('language', language);
 		setText(language);
 	});
+	setText(language);
 }
