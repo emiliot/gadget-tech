@@ -128,6 +128,14 @@ var text = {
 			value : "Si necesita total discreción para vigilar algún lugar de su casa o negocio, le recomendamos las cámaras espías. Estas se colocan dentro de algún objeto (detectores de humo, sensores de movimiento, espejos, tornillos, enchufes, etc.) y pasan desapercibidas a todas las personas que circulen delante de ellas."
 		},
 		{
+			key : "surveillance-t7",
+			value : "Monitoreo Remoto"
+		},
+		{
+			key : "surveillance-t7-desc",
+			value : 'Le ofrecemos los mejores sistemas para mantener "a la vista" la seguridad de su negocio, hogar o empresa, desde donde quiera que usted se encuentre.'
+		},
+		{
 			key : "audio-title",
 			value : "Sistemas de Audio y Video"
 		},
