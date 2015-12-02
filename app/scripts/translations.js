@@ -415,5 +415,10 @@ var initTranslate = function (){
 		sessionStorage.setItem('language', language);
 		setText(language);
 	});
+
+	$(".gadget-language-sw-arrow").on('click', function(){
+		elem.click();
+	});
+	
 	setText(language);
 }
