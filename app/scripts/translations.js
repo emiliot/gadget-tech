@@ -395,6 +395,17 @@ var setText = function(language){
 	};
 }
 
+var setImages = function(language){
+	$(".item>img").each(function(){
+		var elem = $(this),
+			src = elem.attr('src'),
+			re = language === 'esp' ? /eng/gi : /esp/gi;
+		var newSrc = src.replace(re, language);
+		elem.attr('src', newSrc);
+		console.log(re, language, src, newSrc);
+	});
+}
+
 var initTranslate = function (){
 	var elem = $("#language-switch");
 	
@@ -414,6 +425,7 @@ var initTranslate = function (){
 		elem.html(language);
 		sessionStorage.setItem('language', language);
 		setText(language);
+		setImages(language);
 	});
 
 	$(".gadget-language-sw-arrow").on('click', function(){
