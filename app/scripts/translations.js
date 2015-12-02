@@ -1,8 +1,8 @@
 'use strict';
 
-var defaultLanguage = 'en';
+var defaultLanguage = 'eng';
 var text = {
-	'es' : [
+	'esp' : [
 		{
 			key : "hello",
 			value : "mundo"
@@ -194,7 +194,7 @@ var text = {
 
 	],
 
-	'en' : [
+	'eng' : [
 		{
 			key : "hello",
 			value : "world"
@@ -397,15 +397,19 @@ var setText = function(language){
 
 var initTranslate = function (){
 	var elem = $("#language-switch");
-	var language = sessionStorage.getItem('language', defaultLanguage)
+	
+	var language = sessionStorage.getItem('language');
+	language = !language ? defaultLanguage : language;
+
+	sessionStorage.setItem('language', language);
 	elem.html(language);
 	
 	elem.on('click', function(){
 		var language = sessionStorage.getItem('language');
-		if(language === 'en')
-			language = 'es';
+		if(language === 'eng')
+			language = 'esp';
 		else
-			language = 'en';
+			language = 'eng';
 
 		elem.html(language);
 		sessionStorage.setItem('language', language);
