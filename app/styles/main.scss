@@ -163,3 +163,30 @@ h4 {
 		}
 	}
 }
+
+.audio-brands {
+	padding-bottom: 5px;
+
+	div { 
+		display: inline-block;
+		height: 100px;
+		vertical-align: middle;
+
+		img { 
+		    vertical-align: middle;
+			max-height:100%;
+			max-width:100%;
+		}
+	}
+}
+
+.img-full {
+	width : 100%;
+}
+
+.surveillance-helper{
+	margin-top : 20px;
+	border-top: 2px solid #666666;
+	padding-top : 98px;
+}
+
