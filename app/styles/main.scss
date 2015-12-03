@@ -164,10 +164,22 @@ h4 {
 	}
 }
 
-.it-services-help-desk {
-	width : 100%;
+.audio-brands {
+	padding-bottom: 5px;
+
+	div { 
+		display: inline-block;
+		height: 200px;
+		vertical-align: middle;
+
+		img { 
+		    vertical-align: middle;
+			max-height:100%;
+			max-width:100%;
+		}
+	}
 }
 
-.it-services-help{
+.img-full {
 	width : 100%;
 }
