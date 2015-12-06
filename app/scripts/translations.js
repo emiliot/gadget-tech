@@ -113,7 +113,7 @@ var text = {
 		},
 		{
 			key : "surveillance-t5",
-			value : "Cámaras con Movimiento y Zoom  (PTZ)"
+			value : "Con Movimiento y Zoom  (PTZ)"
 		},
 		{
 			key : "surveillance-t5-desc",
