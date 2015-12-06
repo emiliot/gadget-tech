@@ -36,6 +36,14 @@ h4 {
 	font-weight: bold;
 }
 
+.main-container{
+	padding : 0px;
+}
+
+.container{
+	width : 1170px !important;
+}
+
 .carousel {
 	margin-bottom: 50px;
 	/*min-width: 1170px;*/
@@ -82,10 +90,6 @@ h4 {
 			display: none;
 		}
 	}
-}
-
-.container {
-  width: 1170px !important;
 }
 
 .fa, .menu-social {
