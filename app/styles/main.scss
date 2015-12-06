@@ -45,6 +45,7 @@ h4 {
 }
 
 .carousel {
+
 	margin-bottom: 50px;
 	/*min-width: 1170px;*/
 	width: 100%;
@@ -84,16 +85,41 @@ h4 {
 	.carousel-inner {
 		.item {
 			/*min-height:500px;*/
+			img { margin: 0 auto; width: 100%; }
 		}
 
 		.carousel-caption {
 			display: none;
 		}
+
+		.item-home {
+			background-color: #A1A5A9;
+		}
+
+		.item-it-services {
+			background-color: #0F3C5D;
+		}
+
+		.item-networking {
+			background-color: #061125;
+		}
+
+		.item-surveillance {
+			background-color: #6B7075;
+		}
+
+		.item-audio {
+			background-color: #410100;
+		}
+
+		.item-automation {
+			background-color: #939393;
+		}
 	}
 }
 
 .fa, .menu-social {
-  font-size: 30px;
+  font-size: 26px;
 }
 
 .fa.fa-mobile {

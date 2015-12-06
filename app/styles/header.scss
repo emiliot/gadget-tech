@@ -36,7 +36,7 @@ $navBrandHeight: 55px;
 }
 
 .navbar-brand{
-	padding: 7px 15px 0px 0px;
+	padding: 7px 0px 0px 40px;
 	img {
 		height: $navBrandHeight;
 	}
@@ -68,7 +68,7 @@ $navBrandHeight: 55px;
 	list-style: none;
 	margin-bottom: 0px;
 	padding:0;
-	width:800px;
+	width:58.35%;
 
 	> li {
 		width:16.66667%;
