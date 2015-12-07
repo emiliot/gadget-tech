@@ -26,22 +26,17 @@ var htmlInput = './app/*.html',
 var scriptsInput = './app/**/*.js',
 	scriptsOutput = './dist/scripts/';
 	
-var bowerInput = './bower.json',
+var bowerInput = './bower_components/**/*',
 	bowerOutput = './dist/lib/';
 
-gulp.task('html', function(){
+gulp.task('copy', function(){
 	gulp.src(bowerInput)
-		.pipe(mainBowerFiles())
-		.pipe(gulp.dest(bowerOutput));
-	
-	return gulp.src(htmlInput)
-		.pipe(gulp.dest(htmlOutput));
+		.pipe(gulp.dest('dist/lib', { base : '.'}));
 });
 
-gulp.task('bower', ['html'], function(){
-	return gulp.src('./dist/*.html')
-		.pipe(wiredep())
-		.pipe(gulp.dest('./dist/'));
+gulp.task('html', ['copy'], function(){
+	return gulp.src(htmlInput)
+		.pipe(gulp.dest(htmlOutput));
 });
 
 gulp.task('scripts', ['html'], function(){
@@ -50,6 +45,14 @@ gulp.task('scripts', ['html'], function(){
 		.pipe(jshint.reporter(jsHintStylish))
 		.pipe(concat('app.js'))
 		.pipe(gulp.dest(scriptsOutput));
+});
+
+gulp.task('bower', ['html'], function(){
+	return gulp.src('./dist/*.html')
+		.pipe(wiredep({
+			directory : './dist/lib/'
+		}))
+		.pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('sass', ['html'], function () {
@@ -86,7 +89,7 @@ gulp.task('clean', function(){
 	del(['./dist/']);
 });
 
-gulp.task('inject', ['sass', 'scripts', 'bower'], function(){
+gulp.task('inject', ['bower', 'sass', 'scripts'], function(){
 	var target = gulp.src('./dist/*.html'),
 		sourceJs = gulp.src('./dist/scripts/app.js'),
 		sourceCss = gulp.src('./dist/css/app.css');
