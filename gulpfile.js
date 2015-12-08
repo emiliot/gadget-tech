@@ -11,6 +11,7 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	wiredep = require('wiredep').stream,
 	mainBowerFiles = require('gulp-main-bower-files'),
+	bowerSrc = require('gulp-bower-src'),
 	del = require('del');
 
 var autoprefixerOptions = {
@@ -29,12 +30,12 @@ var scriptsInput = './app/**/*.js',
 var bowerInput = './bower_components/**/*',
 	bowerOutput = './dist/lib/';
 
-gulp.task('copy', function(){
-	gulp.src(bowerInput)
-		.pipe(gulp.dest('dist/lib', { base : '.'}));
+gulp.task('bower', function(){
+	return bowerSrc()
+		.pipe(gulp.dest(bowerOutput));
 });
 
-gulp.task('html', ['copy'], function(){
+gulp.task('html', function(){
 	return gulp.src(htmlInput)
 		.pipe(gulp.dest(htmlOutput));
 });
@@ -47,15 +48,7 @@ gulp.task('scripts', ['html'], function(){
 		.pipe(gulp.dest(scriptsOutput));
 });
 
-gulp.task('bower', ['html'], function(){
-	return gulp.src('./dist/*.html')
-		.pipe(wiredep({
-			directory : './dist/lib/'
-		}))
-		.pipe(gulp.dest('./dist/'));
-});
-
-gulp.task('sass', ['html'], function () {
+gulp.task('sass', function () {
 	var options = {
 		errLogToConsole: true,
 		outputStyle: 'expanded'
@@ -68,6 +61,24 @@ gulp.task('sass', ['html'], function () {
 		.pipe(sourcemaps.write())
 		.pipe(concat('app.css'))
 		.pipe(gulp.dest(sassOutput));
+});
+
+gulp.task('clean', function(){
+	del(['./dist/']);
+});
+
+gulp.task('inject', ['bower', 'sass', 'scripts', 'html'], function(){
+	// var target = gulp.src('./dist/*.html'),
+	// 	sourceJs = gulp.src('./dist/scripts/app.js'),
+	// 	sourceCss = gulp.src('./dist/css/app.css');
+	// return target.pipe(inject(sourceJs, {
+	// 	starttag : '<!-- inject:js -->',
+	// 	relative : true
+	// })).pipe(inject(sourceCss, {
+	// 	starttag : '<!-- inject:css -->',
+	// 	relative : true
+	// }))
+	// .pipe(gulp.dest('./dist/'))
 });
 
 gulp.task('watch', function () {
@@ -83,24 +94,6 @@ gulp.task('prod', function(){
 		.pipe(autoprefixer(autoprefixerOptions))
 		.pipe(concat('app.css'))
 		.pipe(gulp.dest(sassOutput));
-});
-
-gulp.task('clean', function(){
-	del(['./dist/']);
-});
-
-gulp.task('inject', ['bower', 'sass', 'scripts'], function(){
-	var target = gulp.src('./dist/*.html'),
-		sourceJs = gulp.src('./dist/scripts/app.js'),
-		sourceCss = gulp.src('./dist/css/app.css');
-	return target.pipe(inject(sourceJs, {
-		starttag : '<!-- inject:js -->',
-		relative : true
-	})).pipe(inject(sourceCss, {
-		starttag : '<!-- inject:css -->',
-		relative : true
-	}))
-	.pipe(gulp.dest('./dist/'))
 });
 
 gulp.task('default', ['inject']);
