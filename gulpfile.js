@@ -35,7 +35,15 @@ gulp.task('bower', function(){
 		.pipe(gulp.dest(bowerOutput));
 });
 
+gulp.task('assets', function(){
+	gulp.src('./app/img/**/*')
+		.pipe(gulp.dest('./dist/img/'));
+});
+
 gulp.task('html', function(){
+	gulp.src('./app/layout/*')
+		.pipe(gulp.dest('./dist/layout/'));
+		
 	return gulp.src(htmlInput)
 		.pipe(gulp.dest(htmlOutput));
 });
@@ -60,25 +68,33 @@ gulp.task('sass', function () {
 		.pipe(autoprefixer(autoprefixerOptions))
 		.pipe(sourcemaps.write())
 		.pipe(concat('app.css'))
+		.pipe(wiredep({
+            directory: 'dist/bower_components',
+            ignorePath: 'dist',
+        }))
 		.pipe(gulp.dest(sassOutput));
 });
 
 gulp.task('clean', function(){
-	del(['./dist/']);
+	del(['./dist/*', '!./dist/bower_components']);
 });
 
-gulp.task('inject', ['bower', 'sass', 'scripts', 'html'], function(){
-	// var target = gulp.src('./dist/*.html'),
-	// 	sourceJs = gulp.src('./dist/scripts/app.js'),
-	// 	sourceCss = gulp.src('./dist/css/app.css');
-	// return target.pipe(inject(sourceJs, {
-	// 	starttag : '<!-- inject:js -->',
-	// 	relative : true
-	// })).pipe(inject(sourceCss, {
-	// 	starttag : '<!-- inject:css -->',
-	// 	relative : true
-	// }))
-	// .pipe(gulp.dest('./dist/'))
+gulp.task('inject', [ 'sass', 'scripts', 'html', 'assets'], function(){
+	var target = gulp.src('./dist/index.html'),
+		sourceJs = gulp.src('./dist/scripts/app.js'),
+		sourceCss = gulp.src('./dist/css/app.css');
+	
+	return target.pipe(inject(sourceJs, {
+		starttag : '<!-- inject:js -->',
+		relative : true
+	})).pipe(inject(sourceCss, {
+		starttag : '<!-- inject:css -->',
+		relative : true
+	}))
+	.pipe(wiredep({
+		directory : 'dist/bower_components',
+		ignorePath : 'dist'
+	})).pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('watch', function () {
