@@ -37,7 +37,6 @@
   "dependencies": {
     "del": "^2.2.0",
     "express": "^4.13.3",
-    "gzippo": "^0.2.0",
     "wiredep": "^2.2.2"
   }
 }

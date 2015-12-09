@@ -19,16 +19,16 @@ var autoprefixerOptions = {
 };
 
 var sassInput = './app/styles/**/*.scss',
-	sassOutput = './dist/css/';
+	sassOutput = './public/css/';
 
 var htmlInput = './app/*.html',
-	htmlOutput = './dist/';
+	htmlOutput = './public/';
 	
 var scriptsInput = './app/**/*.js',
-	scriptsOutput = './dist/scripts/';
+	scriptsOutput = './public/scripts/';
 	
 var bowerInput = './bower_components/**/*',
-	bowerOutput = './dist/lib/';
+	bowerOutput = './public/lib/';
 
 gulp.task('bower', function(){
 	return bowerSrc()
@@ -37,12 +37,12 @@ gulp.task('bower', function(){
 
 gulp.task('assets', function(){
 	gulp.src('./app/img/**/*')
-		.pipe(gulp.dest('./dist/img/'));
+		.pipe(gulp.dest('./public/img/'));
 });
 
 gulp.task('html', function(){
 	gulp.src('./app/layout/*')
-		.pipe(gulp.dest('./dist/layout/'));
+		.pipe(gulp.dest('./public/layout/'));
 		
 	return gulp.src(htmlInput)
 		.pipe(gulp.dest(htmlOutput));
@@ -67,7 +67,7 @@ gulp.task('sass', function () {
 		.pipe(sass(options).on('error', sass.logError))
 		.pipe(autoprefixer(autoprefixerOptions))
 		.pipe(wiredep({
-            directory: 'dist/bower_components',
+            directory: 'public/bower_components',
         }))
 		.pipe(sourcemaps.write())
 		// .pipe(concat('app.css'))
@@ -75,13 +75,13 @@ gulp.task('sass', function () {
 });
 
 gulp.task('clean', function(){
-	del(['./dist/*', '!./dist/bower_components']);
+	del(['./public/*', '!./public/bower_components']);
 });
 
 gulp.task('inject', [ 'sass', 'scripts', 'html', 'assets'], function(){
-	var target = gulp.src('./dist/*.html'),
-		sourceJs = gulp.src('./dist/scripts/app.js'),
-		sourceCss = gulp.src('./dist/css/app.css');
+	var target = gulp.src('./public/*.html'),
+		sourceJs = gulp.src('./public/scripts/app.js'),
+		sourceCss = gulp.src('./public/css/app.css');
 	
 	return target.pipe(inject(sourceJs, {
 		starttag : '<!-- inject:js -->',
@@ -91,11 +91,11 @@ gulp.task('inject', [ 'sass', 'scripts', 'html', 'assets'], function(){
 		relative : true
 	}))
 	.pipe(wiredep({
-		directory : 'dist/bower_components',
+		directory : 'public/bower_components',
 		onPathInjected : function(fileObject){
 			console.log(fileObject);
 		}
-	})).pipe(gulp.dest('./dist/'));
+	})).pipe(gulp.dest('./public/'));
 });
 
 gulp.task('watch', function () {
