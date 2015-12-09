@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "start" : "node web.js"
+    "start" : "node app.js"
   },
   "repository": {
     "type": "git",
