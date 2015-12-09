@@ -10,5 +10,5 @@ app.listen(app.get('port'), function() {
 });
 
 app.get('/', function(request, response){
-	response.send('hello world');
+	response.sendFile(__dirname + '/dist/index.html');
 });
