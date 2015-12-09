@@ -79,7 +79,7 @@ gulp.task('clean', function(){
 });
 
 gulp.task('inject', [ 'sass', 'scripts', 'html', 'assets'], function(){
-	var target = gulp.src('./dist/index.html'),
+	var target = gulp.src('./dist/*.html'),
 		sourceJs = gulp.src('./dist/scripts/app.js'),
 		sourceCss = gulp.src('./dist/css/app.css');
 	
