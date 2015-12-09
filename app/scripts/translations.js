@@ -401,6 +401,7 @@ var setText = function(language){
 			$(this).text(translations[i].value);
 		});
 	};
+	console.log('translating');
 }
 
 var setImages = function(language){

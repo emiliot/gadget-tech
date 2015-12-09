@@ -43,6 +43,8 @@ gulp.task('assets', function(){
 gulp.task('html', function(){
 	gulp.src('./app/layout/*')
 		.pipe(gulp.dest('./public/layout/'));
+	gulp.src('./app/content/*')
+		.pipe(gulp.dest('./public/content/'));
 		
 	return gulp.src(htmlInput)
 		.pipe(gulp.dest(htmlOutput));

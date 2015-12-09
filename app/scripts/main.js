@@ -9,61 +9,40 @@ $(document).ready(function(){
 			setText(sessionStorage.getItem('language'));
 		});
 	});
-	$('#contact').load('layout/_contact.html');
 	$('#carousel').load('layout/_carousel.html', function () {
-		$('#main-carousel .carousel-indicators li').on('click', function () {			
-			switch(this.dataset.slideTo) {
-				case '1':
-					window.location = '/it-services-and-support.html';
-					break;
-
-				case '2':
-					window.location = '/networking.html';
-					break;
-
-				case '3':
-					window.location = '/surveillance-cameras.html';
-					break;
-
-				case '4':
-					window.location = '/audio-and-video.html';
-					break;
-
-				case '5':
-					window.location = '/automation.html';
-					break;
-
-				default:
-					window.location = '/';
-					break;
-			}
+		setImages(sessionStorage.getItem('language'));
+		var carousel = $('#main-carousel');
+		carousel.carousel({
+			pause : false,
+			interval : 2000
 		});
 
-		setImages(sessionStorage.getItem('language'));
+		$('#main-carousel .carousel-indicators li').on('click', function(){
+			var target = this.dataset.slideTo;
+			if(target > 0){
+				carousel.carousel('pause');
+			}else{
+				carousel.carousel('cycle');
+			}
 
+			var callback = function (){
+				setText(sessionStorage.getItem('language'));
+				$('#contact').load('layout/_contact.html');
+			};
 
-		var carrusel = $(this).children('.carousel')[0];
-		$(carrusel).carousel({ pause: true, interval: false });
-		switch($(this).attr('class')) {
-			case 'carousel-it':
-				$(carrusel).carousel(1);
-				break;
-			case 'carousel-networking':
-				$(carrusel).carousel(2);
-				break;
-			case 'carousel-surveillance':
-				$(carrusel).carousel(3);
-				break;
-			case 'carousel-audio':
-				$(carrusel).carousel(4);
-				break;
-			case 'carousel-automation':
-				$(carrusel).carousel(5);
-				break;
-			default:
-				$(this).carousel(0);
-				$(carrusel).carousel({ pause: false, interval: 5000 });
-				break;
-		}
+			if(target == 0)
+				$('#main-content').load('content/home.html', callback);
+			else if(target == 1)
+				$('#main-content').load('content/it.html', callback);
+			else if(target == 2)
+				$('#main-content').load('content/networking.html', callback);
+			else if(target == 3)
+				$('#main-content').load('content/surveillance.html', callback);
+			else if(target == 4)
+				$('#main-content').load('content/audio.html', callback);
+			else
+				$('#main-content').load('content/automation.html', callback);
+
+		});
 	});
 });
