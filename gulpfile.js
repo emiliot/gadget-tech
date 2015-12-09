@@ -66,12 +66,11 @@ gulp.task('sass', function () {
 		.pipe(sourcemaps.init())
 		.pipe(sass(options).on('error', sass.logError))
 		.pipe(autoprefixer(autoprefixerOptions))
-		.pipe(sourcemaps.write())
-		.pipe(concat('app.css'))
 		.pipe(wiredep({
             directory: 'dist/bower_components',
-            ignorePath: 'dist',
         }))
+		.pipe(sourcemaps.write())
+		// .pipe(concat('app.css'))
 		.pipe(gulp.dest(sassOutput));
 });
 
@@ -93,7 +92,9 @@ gulp.task('inject', [ 'sass', 'scripts', 'html', 'assets'], function(){
 	}))
 	.pipe(wiredep({
 		directory : 'dist/bower_components',
-		ignorePath : 'dist'
+		onPathInjected : function(fileObject){
+			console.log(fileObject);
+		}
 	})).pipe(gulp.dest('./dist/'));
 });
 
