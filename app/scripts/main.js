@@ -14,7 +14,7 @@ $(document).ready(function(){
 		var carousel = $('#main-carousel');
 		carousel.carousel({
 			pause : false,
-			interval : 2000
+			interval : 5000
 		});
 
 		$('#main-carousel .carousel-indicators li').on('click', function(){
