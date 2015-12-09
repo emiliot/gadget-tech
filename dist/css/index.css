@@ -1,0 +1,38 @@
+.section {
+  float: left;
+  padding: 15px;
+  position: relative;
+  text-align: center;
+  width: 20%;
+}
+
+.section a {
+  color: #6F6F6F;
+  text-decoration: none;
+}
+
+.section:hover {
+  cursor: pointer;
+}
+
+.section:hover .it-icon {
+  background-image: url("../img/GT IT Serv&Support Icon.png");
+}
+
+.section:hover .networking-icon {
+  background-image: url("../img/GT Networking Icon.png");
+}
+
+.section:hover .surveillance-icon {
+  background-image: url("../img/GT SurveillanceCam Icon.png");
+}
+
+.section:hover .audio-icon {
+  background-image: url("../img/GT Audio&Video Icon.png");
+}
+
+.section:hover .automation-icon {
+  background-image: url("../img/GT Automation Icon.png");
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3N0ZGluIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0MsWUFBWTtFQUNaLGNBQWE7RUFDYixtQkFBbUI7RUFDbkIsbUJBQW1CO0VBQ25CLFdBQVc7Q0FNWDs7QUFYRDtFQVFFLGVBQWM7RUFDZCxzQkFBc0I7Q0FDdEI7O0FBRUY7RUFDQyxnQkFBZ0I7Q0FpQmhCOztBQWxCRDtFQUlFLDREQUFxQjtDQUNyQjs7QUFMRjtFQU9FLHVEQUFxQjtDQUNyQjs7QUFSRjtFQVVFLDREQUFxQjtDQUNyQjs7QUFYRjtFQWFFLHdEQUFxQjtDQUNyQjs7QUFkRjtFQWdCRSx1REFBcUI7Q0FDckIiLCJmaWxlIjoiaW5kZXguY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnNlY3Rpb24ge1xuXHRmbG9hdDogbGVmdDtcblx0cGFkZGluZzoxNXB4O1xuXHRwb3NpdGlvbjogcmVsYXRpdmU7XG5cdHRleHQtYWxpZ246IGNlbnRlcjtcblx0d2lkdGg6IDIwJTtcblxuXHRhIHsgXG5cdFx0Y29sb3I6IzZGNkY2Rjtcblx0XHR0ZXh0LWRlY29yYXRpb246IG5vbmU7XG5cdH1cbn1cbi5zZWN0aW9uOmhvdmVyIHtcblx0Y3Vyc29yOiBwb2ludGVyO1xuXG5cdC5pdC1pY29uIHtcblx0XHRiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uL2ltZy9HVCBJVCBTZXJ2JlN1cHBvcnQgSWNvbi5wbmcnKTtcblx0fVxuXHQubmV0d29ya2luZy1pY29uIHtcblx0XHRiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uL2ltZy9HVCBOZXR3b3JraW5nIEljb24ucG5nJyk7XG5cdH1cblx0LnN1cnZlaWxsYW5jZS1pY29uIHtcblx0XHRiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uL2ltZy9HVCBTdXJ2ZWlsbGFuY2VDYW0gSWNvbi5wbmcnKTtcblx0fVxuXHQuYXVkaW8taWNvbiB7XG5cdFx0YmFja2dyb3VuZC1pbWFnZTogdXJsKCcuLi9pbWcvR1QgQXVkaW8mVmlkZW8gSWNvbi5wbmcnKTtcblx0fVxuXHQuYXV0b21hdGlvbi1pY29uIHtcblx0XHRiYWNrZ3JvdW5kLWltYWdlOiB1cmwoJy4uL2ltZy9HVCBBdXRvbWF0aW9uIEljb24ucG5nJyk7XG5cdH1cbn0iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0= */

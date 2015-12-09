@@ -2,7 +2,7 @@ $font-stack: "Myriad Pro", "Gill Sans", Helvetica, sans-serif;
 $backgroundColor: white;
 $baseColor1: #c7c9cc;
 $baseColor2: #58595b;
-$navBarHeight: 65px;
+$navBarHeight: 85px;
 $navBrandHeight: 55px;
 
 /*==============================
@@ -36,9 +36,10 @@ $navBrandHeight: 55px;
 }
 
 .navbar-brand{
-	padding: 7px 15px 0px 0px;
+	padding: 7px 0px 0px 40px;
 	img {
-		height: $navBrandHeight;
+		height: 95px;
+		margin-top: -12px;
 	}
 }
 
@@ -46,7 +47,7 @@ $navBrandHeight: 55px;
 	background-color: $baseColor2;
 	font-family: $font-stack;
 	height: $navBarHeight;
-	padding-top: 10px;
+	padding-top: 20px;
 
 	ul {
 		list-style: none;
@@ -68,7 +69,7 @@ $navBrandHeight: 55px;
 	list-style: none;
 	margin-bottom: 0px;
 	padding:0;
-	width:800px;
+	width:58.35%;
 
 	> li {
 		width:16.66667%;
