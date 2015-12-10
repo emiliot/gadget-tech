@@ -401,7 +401,6 @@ var setText = function(language){
 			$(this).text(translations[i].value);
 		});
 	};
-	console.log('translating');
 }
 
 var setImages = function(language){
@@ -411,7 +410,6 @@ var setImages = function(language){
 			re = language === 'esp' ? /eng/gi : /esp/gi;
 		var newSrc = src.replace(re, language);
 		elem.attr('src', newSrc);
-		console.log(re, language, src, newSrc);
 	});
 }
 

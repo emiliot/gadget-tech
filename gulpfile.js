@@ -101,7 +101,11 @@ gulp.task('inject', [ 'sass', 'scripts', 'html', 'assets'], function(){
 });
 
 gulp.task('watch', function () {
-	return gulp.watch(sassInput, ['sass'])
+	gulp.watch(sassInput, ['sass'])
+		.on('change', function(event){
+			console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
+		});
+	gulp.watch(scriptsInput, ['inject'])
 		.on('change', function(event){
 			console.log('File ' + event.path + ' was ' + event.type + ', running tasks...');
 		});
@@ -115,4 +119,4 @@ gulp.task('prod', function(){
 		.pipe(gulp.dest(sassOutput));
 });
 
-gulp.task('default', ['inject']);
+gulp.task('default', ['inject', 'watch']);

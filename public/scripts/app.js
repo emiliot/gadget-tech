@@ -17,32 +17,57 @@ $(document).ready(function(){
 			interval : 5000
 		});
 
-		$('#main-carousel .carousel-indicators li').on('click', function(){
-			var target = this.dataset.slideTo;
+		var callback = function(target){
 			if(target > 0){
 				carousel.carousel('pause');
 			}else{
 				carousel.carousel('cycle');
 			}
 
-			var callback = function (){
+			var cb = function (){
 				setText(sessionStorage.getItem('language'));
 				$('#contact').load('layout/_contact.html');
 			};
 
 			if(target == 0)
-				$('#main-content').load('content/home.html', callback);
+				$('#main-content').load('content/home.html', cb);
 			else if(target == 1)
-				$('#main-content').load('content/it.html', callback);
+				$('#main-content').load('content/it.html', cb);
 			else if(target == 2)
-				$('#main-content').load('content/networking.html', callback);
+				$('#main-content').load('content/networking.html', cb);
 			else if(target == 3)
-				$('#main-content').load('content/surveillance.html', callback);
+				$('#main-content').load('content/surveillance.html', cb);
 			else if(target == 4)
-				$('#main-content').load('content/audio.html', callback);
+				$('#main-content').load('content/audio.html', cb);
 			else
-				$('#main-content').load('content/automation.html', callback);
+				$('#main-content').load('content/automation.html', cb);
+		};
 
+		$('#main-carousel .item').on('click', function(){
+			var classes = $(this).attr('class');
+			var target = classes.split(' ').filter(function(next){
+				if(next.startsWith('item-'))
+					return true;
+				return false;
+			})[0];
+			
+			if(target == 'item-home')
+				callback(0);
+			else if(target == 'item-it')
+				callback(1);
+			else if(target == 'item-networking')
+				callback(2);
+			else if(target == 'item-surveillance')
+				callback(3);
+			else if(target == 'item-audio')
+				callback(4);
+			else
+				callback(5);
+		});
+
+		$('#main-carousel .carousel-indicators li').on('click', function(){
+			var target = this.dataset.slideTo;
+			callback(target);
 		});
 	});
 });
@@ -450,7 +475,6 @@ var setText = function(language){
 			$(this).text(translations[i].value);
 		});
 	};
-	console.log('translating');
 }
 
 var setImages = function(language){
@@ -460,7 +484,6 @@ var setImages = function(language){
 			re = language === 'esp' ? /eng/gi : /esp/gi;
 		var newSrc = src.replace(re, language);
 		elem.attr('src', newSrc);
-		console.log(re, language, src, newSrc);
 	});
 }
 
