@@ -149,7 +149,6 @@ gulp.task('assets:prod', function(){
 			svgoPlugins: [{removeViewBox : false}],
 			use : [pngquant()]
 		}))
-		.pipe(debug())
 		.pipe(gulp.dest(globs.assets.output));
 });
 
@@ -162,6 +161,13 @@ gulp.task('prod', ['sass:prod', 'scripts:prod', 'assets:prod', 'html'], function
 			spare : true
 		};
 	
+	gulp.src('./public/layout/*.html')
+		.pipe(minifyHTML(opts))
+		.pipe(gulp.dest('./public/layout/'));
+	gulp.src('./public/content/*.html')
+		.pipe(minifyHTML(opts))
+		.pipe(gulp.dest('./public/content/'));
+
 	return target.pipe(inject(sourceJs, {
 		starttag : '<!-- inject:js -->',
 		relative : true
@@ -172,7 +178,6 @@ gulp.task('prod', ['sass:prod', 'scripts:prod', 'assets:prod', 'html'], function
 	.pipe(wiredep({
 		directory : globs.wiredep.input,
 		onPathInjected : function(fileObject){
-			console.log(fileObject);
 		}
 	})).pipe(minifyHTML(opts))
 	.pipe(gulp.dest('./public/'));
