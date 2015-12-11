@@ -12,7 +12,9 @@ var gulp = require('gulp'),
 	wiredep = require('wiredep').stream,
 	mainBowerFiles = require('gulp-main-bower-files'),
 	bowerSrc = require('gulp-bower-src'),
-	del = require('del');
+	del = require('del'),
+	browserify = require('browserify'),
+	reactify = require('reactify');
 
 var autoprefixerOptions = {
 	browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
