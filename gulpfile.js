@@ -26,7 +26,7 @@ var globs = {
 		output : './public/css/'
 	},
 	html : {
-		input : './app/*.html',
+		input : './app/**/*.html',
 		output : './public/'
 	},
 	scripts : {
@@ -56,12 +56,7 @@ gulp.task('assets', function(){
 		.pipe(gulp.dest(globs.assets.output));
 });
 
-gulp.task('html', function(){
-	gulp.src('./app/layout/*')
-		.pipe(gulp.dest('./public/layout/'));
-	gulp.src('./app/content/*')
-		.pipe(gulp.dest('./public/content/'));
-		
+gulp.task('html', function(){		
 	return gulp.src(globs.html.input)
 		.pipe(gulp.dest(globs.html.output));
 });
