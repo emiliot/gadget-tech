@@ -53,7 +53,7 @@ $(document).ready(function(){
 			
 			if(target == 'item-home')
 				callback(0);
-			else if(target == 'item-it')
+			else if(target == 'item-it-services')
 				callback(1);
 			else if(target == 'item-networking')
 				callback(2);
