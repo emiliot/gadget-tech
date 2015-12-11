@@ -13,8 +13,8 @@ var gulp = require('gulp'),
 	mainBowerFiles = require('gulp-main-bower-files'),
 	bowerSrc = require('gulp-bower-src'),
 	del = require('del'),
-	browserify = require('browserify'),
-	reactify = require('reactify');
+	browserSync = require('browser-sync'),
+	reload = browserSync.reload;
 
 var autoprefixerOptions = {
 	browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
@@ -121,4 +121,15 @@ gulp.task('prod', function(){
 		.pipe(gulp.dest(sassOutput));
 });
 
-gulp.task('default', ['inject', 'watch']);
+gulp.task('serve', ['inject', 'watch'], function(){
+	browserSync({
+		server : {
+			baseDir : 'public',
+			
+		}
+	});
+
+	gulp.watch(['*.html', 'css/**/*.css', 'scripts/**/*.js'], { cwd : 'public'}, reload);
+});
+
+gulp.task('default', ['inject', 'watch', 'serve']);

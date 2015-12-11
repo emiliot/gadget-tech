@@ -2,7 +2,6 @@
 
 $(document).ready(function(){
 	var location = window.location.href.toString().split(window.location.host)[1]; //document.write(url.replace(/^(?:\/\/|[^\/]+)*\//, ""));
-	
 	$('#header').load('layout/_header.html', function(){
 		initTranslate();
 		$('#footer').load('layout/_footer.html', function(){

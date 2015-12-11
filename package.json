@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/emiliot/gadget-tech#readme",
   "devDependencies": {
+    "browser-sync": "^2.10.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-bower-src": "^0.1.0",
@@ -35,7 +36,6 @@
     "wiredep": "^2.2.2"
   },
   "dependencies": {
-    "browserify": "^12.0.1",
     "del": "^2.2.0",
     "express": "^4.13.3",
     "reactify": "^1.1.1",
