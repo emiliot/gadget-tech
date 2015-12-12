@@ -47,12 +47,18 @@ var globs = {
 	},
 	wiredep : {
 		input : 'public/bower_components'
+	},
+	fonts : {
+		input : 'public/bower_components/font-awesome/fonts/*',
+		output : 'public/fonts/'
 	}
 };
 
 gulp.task('assets', function(){
 	gulp.src(globs.assets.input)
 		.pipe(gulp.dest(globs.assets.output));
+	gulp.src(globs.fonts.input)
+		.pipe(gulp.dest(globs.fonts.output));
 });
 
 gulp.task('html', function(){		
@@ -150,6 +156,8 @@ gulp.task('assets:prod', function(){
 			use : [pngquant()]
 		}))
 		.pipe(gulp.dest(globs.assets.output));
+	gulp.src(globs.fonts.input)
+		.pipe(gulp.dest(globs.fonts.output));
 });
 
 gulp.task('prod', ['sass:prod', 'scripts:prod', 'assets:prod', 'html'], function(){
@@ -191,6 +199,14 @@ gulp.task('serve', ['inject', 'watch'], function(){
 	});
 
 	gulp.watch(['*.html', 'css/**/*.css', 'scripts/**/*.js'], { cwd : 'public'}, reload);
+});
+
+gulp.task('serve:prod', ['prod'], function(){
+	browserSync({
+		server : {
+			baseDir : 'public'
+		}
+	});
 });
 
 gulp.task('default', ['inject', 'watch', 'serve']);
