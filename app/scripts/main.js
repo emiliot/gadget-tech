@@ -26,6 +26,9 @@ $(document).ready(function(){
 			var cb = function (){
 				setText(sessionStorage.getItem('language'));
 				$('#contact').load('layout/_contact.html');
+				$('html, body').animate({
+				    scrollTop: $("#main-content").offset().top
+				}, 600);
 			};
 
 			if(target == 0)
