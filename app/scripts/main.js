@@ -42,27 +42,38 @@ $(document).ready(function(){
 				$('#main-content').load('content/automation.html', cb);
 		};
 
-		$('#main-carousel .item').on('click', function(){
+		var handler = function(){
 			var classes = $(this).attr('class');
 			var target = classes.split(' ').filter(function(next){
 				if(next.startsWith('item-'))
 					return true;
 				return false;
 			})[0];
+
+			var slide = 0;
 			
 			if(target == 'item-home')
-				callback(0);
+				slide = 0;
 			else if(target == 'item-it-services')
-				callback(1);
+				slide = 1;
 			else if(target == 'item-networking')
-				callback(2);
+				slide = 2;
 			else if(target == 'item-surveillance')
-				callback(3);
+				slide = 3;
 			else if(target == 'item-audio')
-				callback(4);
+				slide = 4;
 			else
-				callback(5);
-		});
+				slide = 5;
+
+			if($(this)[0].tagName == 'A'){
+				carousel.carousel(slide);
+			}
+
+			callback(slide);
+		};
+
+		$('#main-carousel .item').on('click', handler);
+		$('.menu-link').on('click', handler);
 
 		$('#main-carousel .carousel-indicators li').on('click', function(){
 			var target = this.dataset.slideTo;
