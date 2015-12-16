@@ -20,6 +20,14 @@
 	min-width: 1170px;
 }
 
+.footer-top{
+	margin-top : 40px;
+}
+
+.footer-copyright {
+	margin-bottom : 20px;
+}
+
 ul.unstyled {
 	list-style: none;
 	padding: 0;
@@ -31,10 +39,19 @@ ul.unstyled {
 	}
 }
 
+ul.spaced li {
+	padding-top : 3px;
+}
+
+.footer-phone{
+	color : #85B545;
+	font-size : 30px;
+}
 
 .copyright{
 	font-size: 10px;
 	padding-left : 25px;
+	margin-top : -50px;
 }
 
 .company-color{

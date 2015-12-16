@@ -198,6 +198,26 @@ var text = {
 		{
 			key : "automation-desc-p4",
 			value : "Una Casa Inteligente nos puede ayudar en disminuir el gasto energético para ahorrar dinero y a su vez cuidar el  medio ambiente, brindar comodidad y tranquilidad cuando estamos dentro o fuera de la casa, aumentar nuestra seguridad, auxiliar y facilitar la organización de nuestras actividades cotidianas, realizar nuevas tareas desde casa, etc."
+		},
+		{
+			key : "footer-email",
+			value : "Correo"
+		},
+		{
+			key : "footer-contact",
+			value : "Contáctanos"
+		},
+		{
+			key : "footer-mobile",
+			value : "Teléfono Móvil"
+		},
+		{
+			key : "footer-pobox",
+			value : "Apartado postal"
+		},
+		{
+			key : "footer-location",
+			value : "Ubicación"
 		}
 
 	],
@@ -390,6 +410,26 @@ var text = {
 		{
 			key : "automation-desc-p4",
 			value : "A Smart Home can help us reduce energy spending to save money and in turn the environment care, providing comfort and quiet when we are inside or outside the house, increase our security, assistant and facilitate the organization of our daily activities, making new work from home, etc."
+		},
+		{
+			key : "footer-email",
+			value : "E-mail"
+		},
+		{
+			key : "footer-contact",
+			value : "Contact us"
+		},
+		{
+			key : "footer-mobile",
+			value : "Mobile"
+		},
+		{
+			key : "footer-pobox",
+			value : "P.O. Box"
+		},
+		{
+			key : "footer-location",
+			value : "Locate"
 		}
 	]
 }
@@ -436,6 +476,10 @@ var initTranslate = function (){
 	});
 
 	$(".gadget-language-sw-arrow").on('click', function(){
+		elem.click();
+	});
+
+	$(".gadget-language-sw-link").on('click', function(){
 		elem.click();
 	});
 	
