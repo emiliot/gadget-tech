@@ -28,11 +28,15 @@ $(document).ready(function(){
 							$('html, body').animate({
 							    scrollTop: $("#main-content").offset().top - 100
 							}, 600);
-						}, 3000);
+						}, 2000);
 					};
 
-					if(target == 0)
-						$('#main-content').load('content/home.html', cb);
+					if(target == 0){
+						$('#main-content').load('content/home.html', function(){
+							$('#main-content .menu-link').on('click', handler);
+							cb();
+						});
+					}
 					else if(target == 1)
 						$('#main-content').load('content/it.html', cb);
 					else if(target == 2)
