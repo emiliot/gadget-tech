@@ -82,6 +82,12 @@ $(document).ready(function(){
 					callback(target);
 				});
 			});
+
+			$(".contact-link").on('click', function(){
+				$('html, body').animate({
+				    scrollTop: $("#footer").offset().top - 100
+				}, 600);
+			});
 		});
 	});
 });
