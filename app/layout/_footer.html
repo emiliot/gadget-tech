@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-xs-3 footer-top">
 			<img src="img/GT_LOGOTIPO_DIAPO_TRANSP.png" alt="Logo" class="col-xs-12">
-			<ul class="unstyled links-list">
+			<ul class="unstyled links-list footer-lists">
 				<li><strong>Site map</strong></li>
 				<hr>
 				<li><a href="/"><span class="home-title"></span></a></li>
@@ -18,17 +18,56 @@
 			</ul>
 
 		</div>
-		<div class="col-xs-5 footer-top breathe">
+		<div class="col-xs-5 footer-top breathe footer-lists">
 			<div class="row">
-				form
+				<div class="col-xs-12 text-center">
+					<h3><span class="contact-english">Contact Us</span> / <span class="contact-spanish">Contáctenos</span></h3>
+					<br>
+					<br>
+					<form action="sendEmail.php" method="POST">
+						<div class="col-xs-12 text-left">
+							<label for="first_name">Name*</label>
+						</div>
+						<div class="col-xs-5">
+							<input type="text" class="form-control" id="first_name">
+						</div>
+						<div class="col-xs-7">
+							<input type="text" class="form-control" id="last_name">
+						</div>
+						<div class="col-xs-5 text-left">
+							<span class="text-muted">First</span>
+						</div>
+						<div class="col-xs-7 text-left">
+							<span class="text-muted">Last</span>
+						</div>
+
+						<div class="col-xs-12 text-left">
+							<br>
+							<label for="email">Email*</label>
+							<input type="email" class="form-control" id="email">
+						</div>
+
+						<div class="col-xs-12 text-left">
+							<br>
+							<label for="comment">Comment*</label>
+							<input type="textarea" rows="2" class="form-control" id="comment">
+						</div>
+						<div class="col-xs-12 text-left">
+							<br>
+							<button class="btn btn-lg btn-inverse" type="submit">Submit</button>
+						</div>
+					</form>
+				</div>
 			</div>
 		</div>
-		<div class="col-xs-3 map footer-top">
+		<div class="col-xs-3 map">
 			<ul class="unstyled spaced">
 				<li><strong><span class="footer-mobile">Mobile</span>:</strong></li>
 				<li><span class="footer-phone">713-517-6925</span></li>
+				<br>
 				<li><strong><span class="footer-pobox">P.O. Box</span>:</strong></li>
-				<li>218513 Houston TX. 77218-8513</li>
+				<li><span class="footer-pobox-content">218513 Houston TX. 77218-8513</span></li>
+				<br>
 				<li><strong><span class="footer-location">Locate</span>:</strong></li>
 				<li>&nbsp;</li>
 				<li><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9797.234608723671!2d-95.36896406346602!3d29.753183862848324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640bf3e75f13859%3A0x10b2bea4bc857bec!2sHouston+House!5e0!3m2!1ses-419!2sve!4v1450285339321" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe></li>

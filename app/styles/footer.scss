@@ -13,7 +13,7 @@
 
 .footer {
 	color: #eee;
-	background-color: #58595b;
+	background-color: #333;
 	border-top: 1px solid #e5e5e5;
 	margin-top:50px;
 	padding-top: 19px;
@@ -44,8 +44,12 @@ ul.spaced li {
 }
 
 .footer-phone{
-	color : #85B545;
+	color: #bbb;
 	font-size : 30px;
+}
+
+.footer-pobox-content{
+	color: #bbb;
 }
 
 .copyright{
@@ -68,6 +72,7 @@ ul.spaced li {
 
 .map{
 	padding-left: 40px;
+	margin-top: 62px;
 }
 
 .breathe{
@@ -78,5 +83,20 @@ ul.spaced li {
 .links-list{
 	margin-top: 100px;
 	margin-left: 15px;
+}
+
+.footer-lists{
 	font-size: 13px;
+}
+
+.contact-english{
+	color: #24678d;
+}
+
+.contact-spanish{
+	color: #508d24;
+}
+
+.btn-inverse{
+	@include button-variant(#eee, #555, #444);
 }
